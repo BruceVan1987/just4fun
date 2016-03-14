@@ -1,0 +1,299 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<title>Android程序员面试问题</title>
+<style type="text/css">span.s1 {background-color: #FFFFFF; color: #FF0D00}span.s2 {background-color: #FFFFFF; color: #000000; font-weight: bold}span.s3 {background-color: #FFFFFF; color: #000000}span.s4 {background-color: #FFFFFF; color: #FF0D00; font-weight: bold}</style>
+</head>
+<body>
+<h1 align="center" class="root">
+<a name="3265ii2abv7err4bji4scckehp">Android程序员面试问题</a>
+</h1>
+<div align="center" class="globalOverview">
+<img src="Android%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98_files/images/Android%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98.jpg"></div>
+<h2 class="topic">
+<a name="1du1q5lngc6445rd32fossuka8">UML</a>
+</h2>
+<h2 class="topic">
+<a name="0l6ih7isq37kbgsktpto0iapvo">Android</a>
+</h2>
+<h2 class="topic">
+<a name="6oeogb2r7thgq922212ggudjs1">TCP/IP</a>
+</h2>
+<h3 class="topic">
+<a name="00d040b7lfoo66fq4u8dss40k7">&nbsp;基础知识</a>
+</h3>
+<h3 class="topic">
+<a name="64idk9laf601n74tcetgo1nvg4">&nbsp;&nbsp;url</a>
+</h3>
+<h3 class="topic">
+<a name="5i5s7bgtv948m778dam2ntmdpa">&nbsp;&nbsp;&nbsp;URI，URL，URN有什么区别?</a>
+</h3>
+<div class="notesContainer">
+<p>URI：代表统一资源标识符，指向一个资源的目标地址</p>
+<p>URL：是URI最常见的一种实现（但不是唯一实现）</p>
+<p>URN：统一资源名，URI另一种实现，对外只使用资源名，对内做映射。目前试验阶段。</p>
+</div>
+<h3 class="topic">
+<a name="7a3j82v5l71r35ajql6gs7j0r9">&nbsp;&nbsp;&nbsp;URL的语法?</a>
+</h3>
+<div class="notesContainer">
+<p>URL由九个通用格式组成</p>
+<p>
+<span class="s1">&lt;scheme&gt;://&lt;user&gt;:&lt;password&gt;@&lt;host&gt;:&lt;port&gt;;&lt;params&gt;?&lt;query&gt;#&lt;frag&gt;</span>
+</p>
+<p></p>
+<p>scheme: 访问服务器以获取资源使用哪种协议</p>
+<p>user：password ：略</p>
+<p>host、port ： 主机名或ip地址：duankou </p>
+<p>params: 参数，key/value，可选部分</p>
+<p>query：查询，略</p>
+<p>frag：片段，一小片或一部分资源的名字。引用对象时不会将frag字段传给服务器，客户端内部使用，比如业内跳转（见知乎）</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</div>
+<h3 class="topic">
+<a name="165bfu8do6tit268vao5r8hbv2">&nbsp;&nbsp;http</a>
+</h3>
+<h3 class="topic">
+<a name="0oirc32c7l2ok3o3cd44vo0a5f">&nbsp;&nbsp;&nbsp;报文</a>
+</h3>
+<h3 class="topic">
+<a name="5i1g6fljvt2vjggmvc3v690f42">&nbsp;&nbsp;&nbsp;方法</a>
+</h3>
+<h3 class="topic">
+<a name="1ll82nj4tsg5td5dap0jt65d2f">&nbsp;&nbsp;&nbsp;&nbsp;trace方法有啥用</a>
+</h3>
+<div class="notesContainer">
+<p>trace 请求会在目的服务器端发起一个&ldquo;环回&rdquo;诊断。行程最后一站的服务器会弹回一条 trace 相应，并在相应主体中携带它收到的原始请求报文。</p>
+<p>主要用来看代理服务器等中介对原始报文做哪些修改&mdash;&mdash;比如提升http版本号，加几个header等。</p>
+</div>
+<h3 class="topic">
+<a name="5d5hmb4b40jtoelvmsbvmpe9ug">&nbsp;&nbsp;&nbsp;&nbsp;get和post方法区别</a>
+</h3>
+<div class="notesContainer">
+<p>送分题略</p>
+</div>
+<h3 class="topic">
+<a name="626m606qeir5g2rrkohf9hh1b1">&nbsp;&nbsp;&nbsp;连接处理</a>
+</h3>
+<h3 class="topic">
+<a name="21ns5v2fak5dri9v8ishstn4kc">&nbsp;&nbsp;tcp</a>
+</h3>
+<h3 class="topic">
+<a name="6dkpojcork2cn8dra40r1jgknp">&nbsp;&nbsp;&nbsp;特性</a>
+</h3>
+<h3 class="topic">
+<a name="5dkeutstjbuk63pqsr3kk9amfe">&nbsp;&nbsp;&nbsp;&nbsp;TCP建立连接？</a>
+</h3>
+<div class="notesContainer">
+<p>三次握手</p>
+<p></p>
+<p>第一次握手：主机A发送位码为syn＝1,随机产生<span class="s2">seq number=1234567</span>的数据包到服务器，主机B由SYN=1知道，A要求建立联机；</p>
+<p></p>
+<p>第二次握手：主机B收到请求后要确认联机信息，向A发送ack number=(主机A的seq+1),syn=1,ack=1,随机产生<span class="s2">seq=7654321的包</span>
+</p>
+<p></p>
+<p>第三次握手：主机A收到后检查ack number是否正确，即第一次发送的seq number+1,以及位码ack是否为1，若正确，主机A会再发送ack number=(主机B的seq+1),ack=1，主机B收到后确认seq值与ack=1则连接建立成功。</p>
+</div>
+<h3 class="topic">
+<a name="6r3h3p23j3il6cuogeo9e7bftj">&nbsp;&nbsp;&nbsp;&nbsp;TCP断开连接？</a>
+</h3>
+<div class="notesContainer">
+<p>TCP协议的连接是全双工连接，一个TCP连接存在双向的读写通道。 </p>
+<p>简单说来是 &ldquo;先关读，后关写&rdquo;，一共需要四个阶段。以客户机发起关闭连接为例：（四次挥手）</p>
+<p>1.服务器读通道关闭</p>
+<p>2.客户机写通道关闭</p>
+<p>3.客户机读通道关闭</p>
+<p>4.服务器写通道关闭</p>
+<p></p>
+<p>详细过程：</p>
+<p>    第一阶段   客户机发送完数据之后，向服务器发送一个FIN数据段，序列号为i；</p>
+<p>    1.服务器收到FIN(i)后，返回确认段ACK，序列号为i+1，关闭服务器读通道；</p>
+<p>    2.客户机收到ACK(i+1)后，关闭客户机写通道；</p>
+<p>   （此时，客户机仍能通过读通道读取服务器的数据，服务器仍能通过写通道写数据）</p>
+<p>    第二阶段 服务器发送完数据之后，向客户机发送一个FIN数据段，序列号为j；</p>
+<p>    3.客户机收到FIN(j)后，返回确认段ACK，序列号为j+1，关闭客户机读通道；</p>
+<p>    4.服务器收到ACK(j+1)后，关闭服务器写通道。</p>
+</div>
+<h3 class="topic">
+<a name="45qq7cg0un4opa5p2rj4skrgfg">&nbsp;&nbsp;&nbsp;&nbsp;TCP控流？</a>
+</h3>
+<div class="notesContainer">
+<p>滑动窗口</p>
+</div>
+<h3 class="topic">
+<a name="4k9bv3s08t04sp3b4pg63b6en5">&nbsp;性能优化</a>
+</h3>
+<h3 class="topic">
+<a name="27ernssiuaaemud4lppqen7t90">&nbsp;&nbsp;TCP性能优化</a>
+</h3>
+<h3 class="topic">
+<a name="2foh9bhdsk7hoje8i38r3e0je7">&nbsp;&nbsp;&nbsp;HTTP事务时延</a>
+</h3>
+<h3 class="topic">
+<a name="1bskfsnuvg766buj59hnj2mpnt">&nbsp;&nbsp;&nbsp;&nbsp;TCP建立连接的握手时延？</a>
+</h3>
+<div class="notesContainer">
+<p>用大量连接只传递少量数据</p>
+<p>解决：重用现存连接</p>
+</div>
+<h3 class="topic">
+<a name="182esdqc5neuocbmjl4aa3ulut">&nbsp;&nbsp;&nbsp;&nbsp;延迟确认时延？</a>
+</h3>
+<div class="notesContainer">
+<p>服务器的一种捎带ACK算法。</p>
+<p>延迟确认算法会在一个特定的窗口时间（100-200ms）将输出确认存放在缓冲区，以寻找能够捎带它的数据分组（segment）</p>
+<p>*比如Microsoft TCP栈使用了下面的策略来决定在接收到数据包后 什么时候发送ACK确认数据包： </p>
+<p>1、如果在200毫秒的计时器超时之前，接收到下一个数据包，则立即发送ACK确认数据包。 </p>
+<p>2、如果当前恰好有数据包需要发给ACK确认信息的接收端，则把ACK确认信息附带在数据包上立即发送。 </p>
+<p>3、当计时器超时，ACK确认信息立即发送。 </p>
+<p></p>
+<p>
+<span class="s2">这种算法不适合具有客户端也有阻塞请求队列的情况。</span>
+</p>
+<p>
+<span class="s2">举例：</span><span class="s3"></span>
+</p>
+<p>
+<span class="s3">TCP客户端需要发送10000个记录到Winsock TCP服务端，保存到数据库。记录大小从20字节到100 </span>
+</p>
+<p>
+<span class="s3">字节不等。对于简单的应用程序逻辑，可能的设计方案如下： </span>
+</p>
+<p>
+<span class="s3">1、客户端以阻塞方式发送，服务端以阻塞方式接收。 </span>
+</p>
+<p>
+<span class="s3">2、客户端设置SO_SNDBUF为0，禁用Nagle算法，让每个数据包单独的发送。 </span>
+</p>
+<p>
+<span class="s3">3、服务端在一个循环中调用Recv接收数据包。给Recv传递200字节的缓冲区以便让每个记录在一次Recv调用中 </span>
+</p>
+<p>
+<span class="s3">被获取到。</span>
+</p>
+<p>
+<span class="s3"></span>
+</p>
+<p>
+<span class="s1">Boom&hellip;&hellip;</span><span class="s4"></span>
+</p>
+<p></p>
+</div>
+<h3 class="topic">
+<a name="31k119f1epf74pj8leu00eisg6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nagle算法</a>
+</h3>
+<h3 class="topic">
+<a name="443s411pditl5m9u6t6gcpc7if">&nbsp;&nbsp;&nbsp;&nbsp;慢启动时延</a>
+</h3>
+<div class="notesContainer">
+<p>TCP连接会随时间进行自我调谐，开始会限制连接的最大速度，如果数据成功传输，会随着时间的推移提高传输速度，这种调谐成为TCP慢启动，用于防止因特网的突然过载和拥塞。</p>
+<p>Again，重用连接，or调整启动时的连接顺序，先小后大</p>
+</div>
+<h3 class="topic">
+<a name="68a2jsd0hiu21pksjk1nscah75">&nbsp;&nbsp;&nbsp;&nbsp;TIME_WAIT累积与端口耗尽</a>
+</h3>
+<h3 class="topic">
+<a name="7ve10h9bcfoakhdrjgib0qaqsi">&nbsp;&nbsp;&nbsp;&nbsp;串行处理事务时延</a>
+</h3>
+<h3 class="topic">
+<a name="3l6ub7penofqp4da5jihk5u176">&nbsp;&nbsp;&nbsp;解决拥塞算法？</a>
+</h3>
+<div class="notesContainer">
+<p>拥塞控制机制。最初由V. Jacobson在1988年的论文中提出的TCP的拥塞控制由&ldquo;慢启动(Slow start)&rdquo;和&ldquo;拥塞避免(Congestion avoidance)&rdquo;组成，后来TCP Reno版本中又针对性的加入了&ldquo;快速重传(Fast retransmit)&rdquo;、&ldquo;快速恢复(Fast Recovery)&rdquo;算法，再后来在TCP NewReno中又对&ldquo;快速恢复&rdquo;算法进行了改进，近些年又出现了选择性应答( selective acknowledgement,SACK)算法</p>
+</div>
+<h3 class="topic">
+<a name="1jtr7o34uq27lpgsk7n7i5avok">&nbsp;&nbsp;&nbsp;&nbsp;Tahoe</a>
+</h3>
+<div class="notesContainer">
+<p>算法简介</p>
+<p></p>
+<p>Tahoe算法主要有三个机制去控制数据流和拥塞窗口</p>
+<p>慢启动 slow start (SS)</p>
+<p>拥塞避免 congestion avoidance (CA)</p>
+<p>快速重传 fast retransmit(FS)</p>
+<p></p>
+<p>
+<span class="s2">算法思想</span>
+</p>
+<p></p>
+<p>慢启动阶段，拥塞窗口(congestion window)随着确认的到来指数增长，直到到阈值(ssthresh)</p>
+<p>接着进入拥塞避免阶段，Cwnd每隔RTT线性增加1个单位</p>
+<p>如果连续检测到3个丢包时间事件，不等重传计时器溢出，马上重传丢失数据，之后进入慢启动阶段</p>
+<p></p>
+</div>
+<h3 class="topic">
+<a name="5jurl97m455esbh5ufe7p5g0eb">&nbsp;&nbsp;&nbsp;&nbsp;Reno</a>
+</h3>
+<div class="notesContainer">
+<p>算法简介</p>
+<p></p>
+<p>对Tahoe算法进行改进， 加入快速恢复机制</p>
+<p>慢启动 slow start (SS)</p>
+<p>拥塞避免 congestion avoidance (CA)</p>
+<p>快速重传 fast retransmit(FS)</p>
+<p>快速恢复 Fast Recovery(FR)</p>
+<p></p>
+<p>算法思想</p>
+<p></p>
+<p>慢启动阶段，拥塞窗口(congestion window)随着确认的到来指数增长，直到到达阀值(ssthresh)</p>
+<p>接着进入拥塞避免阶段，Cwnd每隔RTT线性增加1个单位</p>
+<p>如果连续检测到3个重复的ACK，不等重传计时器溢出，马上重传丢失数据</p>
+<p>如果连续检测到3个重复的ACK, 或者重传计时器溢出，Reno会认为有数据报遗失了， 并且认定网络发生拥塞。Reno 会把ssthresh 设为目前Cwnd的一半， 但并不会回到SS的状态，而是设定Cwnd为ssthresh，之后进入拥塞避免状态</p>
+</div>
+<h3 class="topic">
+<a name="18qi4ouf8beac81frtlj9sebkb">&nbsp;&nbsp;&nbsp;&nbsp;New Reno 算法</a>
+</h3>
+<div class="notesContainer">
+<p>算法简介</p>
+<p></p>
+<p>New Reno是基于窗口反馈机制的端到端拥塞控制算法</p>
+<p>算法思想</p>
+<p></p>
+<p>TCP Newreno利用一种Partial ACK包在快速恢复阶段触发数据包的重传。 Partial ACK包是指当一个窗口出现多个分组丢失时， 确认了部分发送分组的重传分组的ACK包。数据传输过程中有多个分组丢失后， Newreno在快速恢复阶段每隔1个往返延迟(RTT)重传1个丢失的分组， 直到拥塞窗口的所有丢失分组都被重传。当在快速恢复阶段接收到第1个Partial ACK时， 将重传计时器复位</p>
+<p></p>
+</div>
+<h3 class="topic">
+<a name="1t367n7mpbba0qsk39ldme0n4s">&nbsp;&nbsp;&nbsp;&nbsp;sack算法</a>
+</h3>
+<div class="notesContainer">
+<p>
+<span class="s2">选择性应答</span>
+</p>
+<p>
+<span class="s2"></span>
+</p>
+<p>算法简介</p>
+<p></p>
+<p>基于Reno算法的改进</p>
+<p>算法思想</p>
+<p></p>
+<p>当检测到拥塞后， 不用重传从数据丢失时到检测出数据丢失时发送的全部数据， 而是对这些数据包进行有选择的确认和重传，从而避免不必要的重传，减少时延，提高网络吞吐量</p>
+<p>在收到第二个重复的ACK包时，进入快速恢复阶段</p>
+<p>设置一个变量用来估计网络中正在传输的分组数量，只有该变量小于拥塞窗口时，才允许发送分组数据</p>
+</div>
+<h3 class="topic">
+<a name="2mulno7tm50593n77dh51a3s7f">&nbsp;&nbsp;&nbsp;&nbsp;Fack 算法</a>
+</h3>
+<div class="notesContainer">
+<p></p>
+<p>基于Sack1算法的修改</p>
+<p>引入三个参数</p>
+<p>未确认分组中的第一个序号</p>
+<p>待发送的第一个分组的序号</p>
+<p>接收端收到的最新分组的序号</p>
+</div>
+<h3 class="topic">
+<a name="2972lmtc9o25ve724um93ckbt4">&nbsp;&nbsp;&nbsp;&nbsp;Vegas</a>
+</h3>
+<div class="notesContainer">
+<p>与Reno采用的报文丢失作为拥塞度量不同的是，Vegas采用延迟作为度量度 并且通过比较实际传输速率与期望传输速率之间的差值来预知拥塞的发生</p>
+<p>太复杂了自行wiki吧这个。</p>
+<p></p>
+</div>
+</body>
+</html>
